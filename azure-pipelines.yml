@@ -21,9 +21,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Free Trial (1965736a-7ba7-48b7-bcf6-4d2c44a69b28)'
-    appType: webAppLinux
-    appName: 'DemoWebAppCV38'
-    package: '$(System.DefaultWorkingDirectory)/**/*.war'
