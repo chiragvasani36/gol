@@ -29,4 +29,4 @@ jobs:
         app-name: 'demowebappcv38'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_48174f1e7e354dd8ab4c84f7a9e7f001 }}
-        package: '${{ github.workspace }}/target/*.war'
+        package: '${{ github.workspace }}/gameoflife-web/target/*.war'
