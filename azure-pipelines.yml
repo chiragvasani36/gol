@@ -23,9 +23,16 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: 'target/*.war'
+    contents: 'gameoflife-web/target/*.war'
     targetFolder: $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: $(Build.ArtifactStagingDirectory)
     artifactName: MyBuildOutputs
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial (1965736a-7ba7-48b7-bcf6-4d2c44a69b28)'
+    appType: webAppLinux
+    appName: 'DemoWebAppCV38'
+    package: '$(System.DefaultWorkingDirectory)/*.war'
